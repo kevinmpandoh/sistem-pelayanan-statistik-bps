@@ -54,4 +54,8 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/chat/{conversation}/send', [ChatController::class, 'sendMessage'])->name('chat.send');
 
     Route::post('/auth/logout', [AuthController::class, 'logout']);
+
+    Route::get('/dashboard', function () {
+        return Inertia::render('Admin/Dashboard');
+    })->name('dashboard');
 });

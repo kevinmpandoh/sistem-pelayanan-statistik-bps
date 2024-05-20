@@ -94,7 +94,7 @@ const ModalLogin = () => {
                                 />
                             </div>
                             <div className="flex justify-between">
-                                <div className="flex items-start">
+                                {/* <div className="flex items-start">
                                     <div className="flex items-center h-5">
                                         <input
                                             id="remember"
@@ -110,13 +110,13 @@ const ModalLogin = () => {
                                     >
                                         Ingat saya
                                     </label>
-                                </div>
-                                <a
+                                </div> */}
+                                {/* <a
                                     href="#"
                                     className="text-sm text-blue-700 hover:underline dark:text-blue-500"
                                 >
                                     lupa Password?
-                                </a>
+                                </a> */}
                             </div>
                             <button
                                 type="submit"

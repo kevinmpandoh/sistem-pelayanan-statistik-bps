@@ -189,7 +189,7 @@ export default function Navbar() {
                                         role="button"
                                         className="btn btn-ghost btn-circle avatar"
                                     >
-                                        <div className="w-10 rounded-full ">
+                                        <div className="w-10 rounded-full border-2 border-gray-500">
                                             <img
                                                 alt="Tailwind CSS Navbar component"
                                                 src={`img/${auth.user.img}`}
