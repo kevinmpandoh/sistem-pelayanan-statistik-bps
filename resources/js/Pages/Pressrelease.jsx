@@ -6,6 +6,7 @@ import Loading from "../Components/Loading";
 import CardList from "../Components/CardList";
 import Breadcrumb from "../Components/Breadcrumb";
 import Title from "../Components/Title";
+import LoadingList from "../Components/Loading/LoadingPublication";
 
 export default function Pressrelease() {
     const [currentPage, setCurrentPage] = useState(1);
@@ -39,6 +40,7 @@ export default function Pressrelease() {
                 <Breadcrumb menu="pressrelease" />
 
                 <Title title="Berita Resmi Statistik" />
+                {dataPressrelease.length === 0 && <LoadingList />}
                 <CardList
                     data={dataPressrelease}
                     handlePageChange={handlePageChange}

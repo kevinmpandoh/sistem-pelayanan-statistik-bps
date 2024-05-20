@@ -41,7 +41,10 @@ const CardList = ({ data, currentPage, handlePageChange, totalData, menu }) => {
                                 </h5>
                                 <p className="hidden md:block">
                                     {data.abstract
-                                        ? parse(data.abstract)
+                                        ? truncateText(
+                                              parse(data.abstract),
+                                              300
+                                          )
                                         : data.news
                                         ? truncateText(data.news, 300)
                                         : ""}

@@ -8,6 +8,7 @@ import Breadcrumb from "../Components/Breadcrumb";
 import Title from "../Components/Title";
 import { Pagination } from "antd";
 import { Link } from "@inertiajs/react";
+import LoadingImage from "../Components/Loading/LoadingImage";
 
 export default function Infographic() {
     const [currentPage, setCurrentPage] = useState(1);

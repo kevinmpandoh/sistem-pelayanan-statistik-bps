@@ -8,6 +8,7 @@ export default function Navbar() {
     const { component } = usePage();
     const { auth } = usePage().props;
     const [open, setOpen] = useState(false);
+    console.log(component);
     const showDrawer = () => {
         setOpen(true);
     };
@@ -30,7 +31,7 @@ export default function Navbar() {
                 extra={
                     <Space>
                         {auth.user && (
-                            <div href="/user/profile" className="">
+                            <div className="">
                                 <div className="flex text-sm text-center items-center">
                                     <h1>{auth.user.name}</h1>
 
@@ -58,7 +59,7 @@ export default function Navbar() {
                             <Link
                                 href="/"
                                 className={`${
-                                    component == "Home"
+                                    component.includes("Home")
                                         ? "block py-2 p-3 gap-1 font-bold text-yellow-600 rounded md:bg-transparent md:text-yellow-400 md:py-3 md:dark:text-yellow-400"
                                         : "block py-2 px-3 font-bold text-gray-800 rounded  md:hover:bg-transparent  md:py-3 md:dark:hover:text-yellow-400 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                                 }`}
@@ -70,7 +71,7 @@ export default function Navbar() {
                             <Link
                                 href="/publication"
                                 className={`${
-                                    component == "Publication"
+                                    component.includes("Publication")
                                         ? "block py-2 p-3 gap-1 font-bold text-yellow-600 rounded md:bg-transparent md:text-yellow-400 md:py-3 md:dark:text-yellow-400"
                                         : "block py-2 px-3 font-bold text-gray-800 rounded  md:hover:bg-transparent  md:py-3 md:dark:hover:text-yellow-400 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                                 }`}
@@ -82,7 +83,7 @@ export default function Navbar() {
                             <Link
                                 href="/pressrelease"
                                 className={`${
-                                    component == "Pressrelease"
+                                    component.includes("Pressrelease")
                                         ? "block py-2 p-3 gap-1 font-bold text-yellow-600 rounded md:bg-transparent md:text-yellow-400 md:py-3 md:dark:text-yellow-400"
                                         : "block py-2 px-3 font-bold text-gray-800 rounded  md:hover:bg-transparent  md:py-3 md:dark:hover:text-yellow-400 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                                 }`}
@@ -94,7 +95,7 @@ export default function Navbar() {
                             <Link
                                 href="/infographic"
                                 className={`${
-                                    component == "Infographic"
+                                    component.includes("Infographic")
                                         ? "block py-2 p-3 gap-1 font-bold text-yellow-600 rounded md:bg-transparent md:text-yellow-400 md:py-3 md:dark:text-yellow-400"
                                         : "block py-2 px-3 font-bold text-gray-800 rounded  md:hover:bg-transparent  md:py-3 md:dark:hover:text-yellow-400 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                                 }`}
@@ -106,30 +107,12 @@ export default function Navbar() {
                             <Link
                                 href="/news"
                                 className={`${
-                                    component == "News"
+                                    component.includes("News")
                                         ? "block py-2 p-3 gap-1 font-bold text-yellow-600 rounded md:bg-transparent md:text-yellow-400 md:py-3 md:dark:text-yellow-400"
                                         : "block py-2 px-3 font-bold text-gray-800 rounded  md:hover:bg-transparent  md:py-3 md:dark:hover:text-yellow-400 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                                 }`}
                             >
                                 Berita
-                            </Link>
-                        </li>
-
-                        <li>
-                            <Divider className="my-1" />
-                            <Link
-                                href="/user/profile"
-                                className="block py-2 p-3 gap-1 font-bold text-gray-800 rounded md:bg-transparent md:text-yellow-400 md:py-3 md:dark:text-yellow-400"
-                            >
-                                Profile
-                            </Link>
-                        </li>
-                        <li>
-                            <Link
-                                href="/user/profile"
-                                className="block py-2 p-3 gap-1 font-bold text-gray-800 rounded md:bg-transparent md:text-yellow-400 md:py-3 md:dark:text-yellow-400"
-                            >
-                                Dashboard
                             </Link>
                         </li>
 
@@ -197,7 +180,7 @@ export default function Navbar() {
                             </button>
                         ) : (
                             <div className="flex justify-center items-center">
-                                <span className="text-gray-200 text-sm font-small items-center mr-2 hidden lg:block">
+                                <span className="text-gray-200 text-sm font-semibold items-center mr-2 hidden lg:block">
                                     {auth.user.name}
                                 </span>
                                 <div className="dropdown dropdown-end hidden lg:block">
@@ -260,7 +243,7 @@ export default function Navbar() {
                                 <Link
                                     href="/"
                                     className={`${
-                                        component == "Home"
+                                        component.includes("Home")
                                             ? "block py-2 p-3 gap-1 font-semibold text-white bg-blue-700 rounded md:bg-transparent md:text-yellow-400 md:py-3 md:dark:text-yellow-400"
                                             : "block py-2 px-3 font-semibold text-white rounded  md:hover:bg-transparent  md:py-3 md:dark:hover:text-yellow-400 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                                     }`}
@@ -272,7 +255,7 @@ export default function Navbar() {
                                 <Link
                                     href="/publication"
                                     className={`${
-                                        component == "Publication"
+                                        component.includes("Publication")
                                             ? "block py-2 p-3 gap-1 font-semibold text-white bg-blue-700 rounded md:bg-transparent md:text-yellow-400 md:py-3 md:dark:text-yellow-400"
                                             : "block py-2 px-3 font-semibold text-white rounded  md:hover:bg-transparent  md:py-3 md:dark:hover:text-yellow-400 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                                     }`}
@@ -284,7 +267,7 @@ export default function Navbar() {
                                 <Link
                                     href="/pressrelease"
                                     className={`${
-                                        component == "Pressrelease"
+                                        component.includes("Pressrelease")
                                             ? "block py-2 p-3 gap-1 font-semibold text-white bg-blue-700 rounded md:bg-transparent md:text-yellow-400 md:py-3 md:dark:text-yellow-400"
                                             : "block py-2 px-3 font-semibold text-white rounded  md:hover:bg-transparent  md:py-3 md:dark:hover:text-yellow-400 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                                     }`}
@@ -296,7 +279,7 @@ export default function Navbar() {
                                 <Link
                                     href="/infographic"
                                     className={`${
-                                        component == "Infographic"
+                                        component.includes("Infographic")
                                             ? "block py-2 p-3 gap-1 font-semibold text-white bg-blue-700 rounded md:bg-transparent md:text-yellow-400 md:py-3 md:dark:text-yellow-400"
                                             : "block py-2 px-3 font-semibold text-white rounded  md:hover:bg-transparent  md:py-3 md:dark:hover:text-yellow-400 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                                     }`}
@@ -308,7 +291,7 @@ export default function Navbar() {
                                 <Link
                                     href="/news"
                                     className={`${
-                                        component == "News"
+                                        component.includes("News")
                                             ? "block py-2 p-3 gap-1 font-semibold text-white bg-blue-700 rounded md:bg-transparent md:text-yellow-400 md:py-3 md:dark:text-yellow-400"
                                             : "block py-2 px-3 font-semibold text-white rounded  md:hover:bg-transparent  md:py-3 md:dark:hover:text-yellow-400 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                                     }`}

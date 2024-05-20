@@ -10,6 +10,7 @@ import IndicatorCard from "../Components/Home/IndicatorCard";
 import LastNews from "../Components/Home/LastNews";
 import Title from "../Components/Title";
 import Tabs from "../Components/Home/Tabs";
+import { Skeleton } from "antd";
 
 export default function Home() {
     const [dataIndicator, setDataIndicator] = useState([]);
@@ -90,22 +91,29 @@ export default function Home() {
     return (
         <Layout>
             <Head title="Beranda" />
-            <Jumbotron />
+            {/* <Jumbotron /> */}
 
             <Container>
                 <Title title="Indikator Strategi" />
-                <CardSlider>
-                    {dataIndicator.length != 0 ? (
-                        dataIndicator.map((item, index) => (
+                {dataIndicator.length != 0 ? (
+                    <CardSlider>
+                        {dataIndicator.map((item, index) => (
                             <IndicatorCard key={index} item={item} />
-                        ))
-                    ) : (
-                        <Loading />
-                    )}
-                </CardSlider>
+                        ))}
+                    </CardSlider>
+                ) : (
+                    <Loading />
+                )}
                 <Title title="Informasi Terbaru" />
                 <Tabs activeTab={activeTab} handleClickTab={handleClickTab} />
-                <ListNewData listNewData={listNewData} activeTab={activeTab} />
+                {listNewData.length != 0 ? (
+                    <ListNewData
+                        listNewData={listNewData}
+                        activeTab={activeTab}
+                    />
+                ) : (
+                    <Skeleton active />
+                )}
                 <Title title="Berita Terbaru Kegiatan BPS" />
                 <LastNews dataNews={dataNews} />
             </Container>

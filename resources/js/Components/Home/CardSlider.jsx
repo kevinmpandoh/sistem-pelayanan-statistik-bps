@@ -15,7 +15,7 @@ const CardSlider = ({ children }) => {
     const NextArrow = ({ onClick }) => {
         return (
             <div
-                className="absolute top-1/2 hidden lg:block
+                className=" absolute top-1/2 hidden lg:block
          transform -translate-y-1/2 lg:-right-[80px]  cursor-pointer bg-black bg-opacity-10 p-3 rounded-full hover:bg-opacity-50"
                 onClick={onClick}
             >
@@ -100,7 +100,7 @@ const CardSlider = ({ children }) => {
     };
     return (
         <>
-            <ul className="mx-auto">
+            <ul className="mx-auto ">
                 <Slider {...settings}>{children}</Slider>
             </ul>
         </>

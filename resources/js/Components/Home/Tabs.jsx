@@ -88,7 +88,7 @@ const Tabs = ({ activeTab, handleClickTab }) => {
             <Link
                 type="button"
                 href={activeTab}
-                className="text-blue-600 text-sm text-end lg:text-md font-semibold capitalize dark:text-blue-500 hover:text-blue-500 dark:hover:text-blue-500"
+                className="text-blue-600 text-base text-end lg:text-md font-semibold capitalize dark:text-blue-500 hover:text-blue-500 dark:hover:text-blue-500"
             >
                 Lihat Semua {activeTab}
             </Link>

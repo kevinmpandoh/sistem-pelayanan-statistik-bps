@@ -11,6 +11,7 @@ const PressreleaseDetail = ({ pressrelease }) => {
             <Head title={pressrelease.title} />
             <Container>
                 <Breadcrumb menu="pressrelease" submenu={pressrelease.title} />
+
                 <DetailCard data={pressrelease} menu="pressrelease" />
             </Container>
         </Layout>

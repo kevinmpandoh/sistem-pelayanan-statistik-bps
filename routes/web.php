@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Http;
 use App\Http\Controllers\ChatController;
-
+use Illuminate\Http\Request;
 
 Route::get('/', function () {
     return Inertia::render('Home');

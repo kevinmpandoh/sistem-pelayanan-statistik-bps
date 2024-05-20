@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Head } from "@inertiajs/react";
 import Layout from "../Layout/Main";
-import Loading from "../Components/Loading";
+
 import Container from "../Components/Container";
 import Breadcrumb from "../Components/Breadcrumb";
 import Title from "../Components/Title";
 import CardList from "../Components/CardList";
+import LoadingList from "../Components/Loading/LoadingPublication";
 
 export default function Publication() {
     const [dataPublication, setDataPublication] = useState([]);
@@ -40,6 +41,8 @@ export default function Publication() {
             <Container>
                 <Breadcrumb menu="publication" />
                 <Title title="Publikasi" />
+
+                {dataPublication.length === 0 && <LoadingList />}
 
                 <CardList
                     data={dataPublication}

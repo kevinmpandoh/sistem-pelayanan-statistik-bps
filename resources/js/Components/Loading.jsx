@@ -1,11 +1,13 @@
+import { Skeleton } from "antd";
 import React from "react";
 
 const Loading = () => {
     return (
-        <div className="flex items-center justify-center">
-            <div className="text-lg font-semibold text-gray-900 dark:text-white">
-                Loading...
-            </div>
+        <div
+            role="status"
+            class="flex items-center flex-row justify-center h-72 w-42 bg-gray-300 rounded-lg animate-pulse dark:bg-gray-700"
+        >
+            <span class="sr-only">Loading...</span>
         </div>
     );
 };
